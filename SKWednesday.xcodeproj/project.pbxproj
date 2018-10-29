@@ -15,6 +15,7 @@
 		7B154864218745BB0004F002 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B154862218745BB0004F002 /* Main.storyboard */; };
 		7B154866218745BD0004F002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B154865218745BD0004F002 /* Assets.xcassets */; };
 		7B154869218745BD0004F002 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B154867218745BD0004F002 /* LaunchScreen.storyboard */; };
+		7B15487121875CF50004F002 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B15487021875CF50004F002 /* GameData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		7B154865218745BD0004F002 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B154868218745BD0004F002 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B15486A218745BD0004F002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B15487021875CF50004F002 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				7B15485A218745BB0004F002 /* GameScene.sks */,
 				7B15485C218745BB0004F002 /* Actions.sks */,
 				7B15485E218745BB0004F002 /* GameScene.swift */,
+				7B15487021875CF50004F002 /* GameData.swift */,
 				7B154860218745BB0004F002 /* GameViewController.swift */,
 				7B154862218745BB0004F002 /* Main.storyboard */,
 				7B154865218745BD0004F002 /* Assets.xcassets */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B15485F218745BB0004F002 /* GameScene.swift in Sources */,
+				7B15487121875CF50004F002 /* GameData.swift in Sources */,
 				7B154861218745BB0004F002 /* GameViewController.swift in Sources */,
 				7B154859218745BB0004F002 /* AppDelegate.swift in Sources */,
 			);
@@ -297,6 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CWGS87U262;
 				INFOPLIST_FILE = SKWednesday/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,6 +320,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CWGS87U262;
 				INFOPLIST_FILE = SKWednesday/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
