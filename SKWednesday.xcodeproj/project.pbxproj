@@ -16,6 +16,11 @@
 		7B154866218745BD0004F002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B154865218745BD0004F002 /* Assets.xcassets */; };
 		7B154869218745BD0004F002 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B154867218745BD0004F002 /* LaunchScreen.storyboard */; };
 		7B15487121875CF50004F002 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B15487021875CF50004F002 /* GameData.swift */; };
+		7B54DDD92189B4C600D599C9 /* A1.Atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7B54DDD82189B4C600D599C9 /* A1.Atlas */; };
+		7B54DDDD2189B5B000D599C9 /* B1.Atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7B54DDDC2189B5B000D599C9 /* B1.Atlas */; };
+		7B54DDDF2189B5D300D599C9 /* C1.Atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7B54DDDE2189B5D300D599C9 /* C1.Atlas */; };
+		7B54DDE22189C07400D599C9 /* Smokin.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7B54DDE02189C07400D599C9 /* Smokin.sks */; };
+		7B54DDE32189C07400D599C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B54DDE12189C07400D599C9 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		7B154868218745BD0004F002 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B15486A218745BD0004F002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B15487021875CF50004F002 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
+		7B54DDD82189B4C600D599C9 /* A1.Atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = A1.Atlas; sourceTree = "<group>"; };
+		7B54DDDC2189B5B000D599C9 /* B1.Atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = B1.Atlas; sourceTree = "<group>"; };
+		7B54DDDE2189B5D300D599C9 /* C1.Atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = C1.Atlas; sourceTree = "<group>"; };
+		7B54DDE02189C07400D599C9 /* Smokin.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Smokin.sks; sourceTree = "<group>"; };
+		7B54DDE12189C07400D599C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +56,7 @@
 		7B15484C218745BB0004F002 = {
 			isa = PBXGroup;
 			children = (
+				7B54DDE12189C07400D599C9 /* Assets.xcassets */,
 				7B154857218745BB0004F002 /* SKWednesday */,
 				7B154856218745BB0004F002 /* Products */,
 			);
@@ -62,6 +73,7 @@
 		7B154857218745BB0004F002 /* SKWednesday */ = {
 			isa = PBXGroup;
 			children = (
+				7B54DDE02189C07400D599C9 /* Smokin.sks */,
 				7B154858218745BB0004F002 /* AppDelegate.swift */,
 				7B15485A218745BB0004F002 /* GameScene.sks */,
 				7B15485C218745BB0004F002 /* Actions.sks */,
@@ -70,6 +82,9 @@
 				7B154860218745BB0004F002 /* GameViewController.swift */,
 				7B154862218745BB0004F002 /* Main.storyboard */,
 				7B154865218745BD0004F002 /* Assets.xcassets */,
+				7B54DDDE2189B5D300D599C9 /* C1.Atlas */,
+				7B54DDDC2189B5B000D599C9 /* B1.Atlas */,
+				7B54DDD82189B4C600D599C9 /* A1.Atlas */,
 				7B154867218745BD0004F002 /* LaunchScreen.storyboard */,
 				7B15486A218745BD0004F002 /* Info.plist */,
 			);
@@ -135,10 +150,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B154864218745BB0004F002 /* Main.storyboard in Resources */,
+				7B54DDD92189B4C600D599C9 /* A1.Atlas in Resources */,
 				7B15485B218745BB0004F002 /* GameScene.sks in Resources */,
 				7B154866218745BD0004F002 /* Assets.xcassets in Resources */,
+				7B54DDE32189C07400D599C9 /* Assets.xcassets in Resources */,
+				7B54DDE22189C07400D599C9 /* Smokin.sks in Resources */,
 				7B154869218745BD0004F002 /* LaunchScreen.storyboard in Resources */,
+				7B54DDDD2189B5B000D599C9 /* B1.Atlas in Resources */,
 				7B15485D218745BB0004F002 /* Actions.sks in Resources */,
+				7B54DDDF2189B5D300D599C9 /* C1.Atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,21 +28,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var box: SKShapeNode?
     var laser: SKSpriteNode?
     var bomb: SKSpriteNode?
+    var gameover: SKLabelNode!
+    var lives: Int!
     
     func didBegin(_ contact: SKPhysicsContact) {
         print("contact \(contact.bodyA.node?.name) \(contact.bodyB.node?.name)")
         contact.bodyA.node?.removeFromParent()
         contact.bodyB.node?.removeFromParent()
+        if contact.bodyA.node?.name == "player" {
+            gameOver()
+        }
     }
     
     override func didMove(to view: SKView) {
 //        player = self.childNode(withName: "player") as? SKSpriteNode
         let gameData = GameData.shared
         fireRate = gameData.firerate
+        lives = gameData.lives
         self.physicsWorld.contactDelegate = self
         
-        player = SKSpriteNode(imageNamed: "player_frame3")
-        player?.position = CGPoint(x: self.view!.bounds.minX, y: -666 + player!.size.height)
+        player = SKSpriteNode(imageNamed: "noun_player_702307")
+        
+        let baseY = setScene().y + (player?.size.height)!
+        player?.position = CGPoint(x: self.view!.bounds.minX, y: baseY)
 
         player?.physicsBody = SKPhysicsBody(rectangleOf: player!.size)
         player?.physicsBody?.isDynamic = false
@@ -61,10 +69,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         box = SKShapeNode(rect: CGRect(x: 0, y: 0, width: 256, height: 256))
         box?.lineWidth = 0
         addChild(box!)
+        
+        let alienA = SKTextureAtlas(named: "A1")
+        let alienB = SKTextureAtlas(named: "B1")
+        let alienC = SKTextureAtlas(named: "C1")
+        
+        let alienAT = buildTexture(tag2U: "noun_alien_A", alien2U: alienA)
+        let alienBT = buildTexture(tag2U: "noun_alien_B", alien2U: alienB)
+        let alienCT = buildTexture(tag2U: "noun_alien_C", alien2U: alienC)
+        
         for yCord in stride(from: 0, to: 257, by: 64) {
+
+            
             for xCord in stride(from: 0, to: 257, by: 64) {
+                if yCord < 128 {
+                enemy = SKSpriteNode(imageNamed: "noun_alien_A1")
+                enemy?.run(SKAction.repeatForever(SKAction.animate(with: alienAT, timePerFrame: 0.5, resize: false, restore: true)), withKey:"mutationA")
+                } else {
+                    if yCord > 127 && yCord < 127 + 128{
+                    enemy = SKSpriteNode(imageNamed: "noun_alien_B1")
+                    enemy?.run(SKAction.repeatForever(SKAction.animate(with: alienBT, timePerFrame: 0.5, resize: false, restore: true)), withKey:"mutationB")
+                    } else {
+                        enemy = SKSpriteNode(imageNamed: "noun_alien_C1")
+                        enemy?.run(SKAction.repeatForever(SKAction.animate(with: alienCT, timePerFrame: 0.5, resize: false, restore: true)), withKey:"mutationC")
+                    }
+                }
                 
-                enemy = SKSpriteNode(imageNamed: "enemy_frame3")
+                enemy?.scale(to: CGSize(width: 50, height: 50))
                 enemy?.position = CGPoint(x: xCord, y: yCord)
                 enemy?.physicsBody = SKPhysicsBody(rectangleOf: enemy!.size)
                 enemy?.physicsBody?.isDynamic = true
@@ -77,8 +108,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 enemy?.physicsBody?.contactTestBitMask = categories.playerCat | categories.laserCat
                 enemy?.name = "enemy"
                 box?.addChild(enemy!)
+                
             }
         }
+    }
+    
+    func buildTexture(tag2U: String, alien2U: SKTextureAtlas) -> [SKTexture] {
+        var lightFrames: [SKTexture] = []
+        let numImages = alien2U.textureNames.count
+        for i in 1...numImages {
+            let alienTexture = "\(tag2U)\(i)"
+            lightFrames.append(alien2U.textureNamed(alienTexture))
+        }
+        return lightFrames
     }
     
     func setScene() -> CGPoint {
@@ -90,17 +132,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
+        
         let pointTouched = touches.first?.location(in: self.view)
+        print("pointTouched \(pointTouched!.y)")
+        if pointTouched!.y < 64 {
+            let doors = SKTransition.crossFade(withDuration: 2)
+            doors.pausesIncomingScene = false
+            doors.pausesOutgoingScene = true
+            if let scene = SKScene(fileNamed: "GameScene") {
+                scene.scaleMode = .aspectFill
+                view!.presentScene(scene, transition: doors)
+            }
+        }
+        
+        if player?.parent == nil {
+            return
+        }
         
         if pointTouched!.x < (self.view?.bounds.minX)! + 128 {
-            let moveLeft = SKAction.moveBy(x: -20, y: 0, duration: 0)
+            let moveLeft = SKAction.moveBy(x: -24, y: 0, duration: 0)
                         print("LeftSide")
             player!.run(moveLeft)
             return
         }
         if pointTouched!.x > (self.view?.bounds.maxX)! - 128 {
                         print("RightSide")
-            let moveRight = SKAction.moveBy(x: 20, y: 0, duration: 0)
+            let moveRight = SKAction.moveBy(x: 24, y: 0, duration: 0)
             player!.run(moveRight)
             return
         }
@@ -246,5 +304,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         bomb?.physicsBody?.collisionBitMask = categories.noCat
         bomb?.physicsBody?.contactTestBitMask = categories.playerCat
         bomb?.name = "bomb"
+    }
+    
+    func gameOver() {
+        let switchToLeaderboard = SKAction.run {
+//            if let scene = SKScene(fileNamed: "Leaderboard") {
+//                scene.scaleMode = .aspectFill
+//                let doors = SKTransition.crossFade(withDuration: 2)
+//                doors.pausesIncomingScene = false
+//                doors.pausesOutgoingScene = true
+//                self.view!.presentScene(scene, transition: doors)
+//            }
+        }
+        gameover = SKLabelNode(fontNamed: "HoeflerText-Italic")
+        gameover.text = "Game Over"
+        gameover.fontSize = 65
+        gameover.fontColor = SKColor.white
+        gameover.position = CGPoint(x: frame.midX, y: frame.midY)
+        self.lives -= 1
+        print(lives)
+        if lives == 0 {
+            self.run(switchToLeaderboard)
+        }
+        //
+        //        removeAction(forKey: enableGestures)
+        //      removeAction(forKey: respondToGesture())
+        addChild(gameover)
     }
 }

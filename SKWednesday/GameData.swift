@@ -11,6 +11,7 @@ import SpriteKit
 class GameData {
     static let shared = GameData()
     var firerate:TimeInterval = 0.05
+    var lives: Int = 3
     
     private init() { }
 }
