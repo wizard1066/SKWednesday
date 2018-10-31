@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7B154859218745BB0004F002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B154858218745BB0004F002 /* AppDelegate.swift */; };
 		7B15485B218745BB0004F002 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7B15485A218745BB0004F002 /* GameScene.sks */; };
-		7B15485D218745BB0004F002 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7B15485C218745BB0004F002 /* Actions.sks */; };
 		7B15485F218745BB0004F002 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B15485E218745BB0004F002 /* GameScene.swift */; };
 		7B154861218745BB0004F002 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B154860218745BB0004F002 /* GameViewController.swift */; };
 		7B154864218745BB0004F002 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B154862218745BB0004F002 /* Main.storyboard */; };
@@ -21,13 +20,15 @@
 		7B54DDDF2189B5D300D599C9 /* C1.Atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7B54DDDE2189B5D300D599C9 /* C1.Atlas */; };
 		7B54DDE22189C07400D599C9 /* Smokin.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7B54DDE02189C07400D599C9 /* Smokin.sks */; };
 		7B54DDE32189C07400D599C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B54DDE12189C07400D599C9 /* Assets.xcassets */; };
+		7B54DDEB2189E26000D599C9 /* OpenScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7B54DDEA2189E26000D599C9 /* OpenScene.sks */; };
+		7B54DDED2189E27E00D599C9 /* OpenScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B54DDEC2189E27E00D599C9 /* OpenScene.swift */; };
+		7B54DDF72189E84E00D599C9 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7B54DDF62189E84E00D599C9 /* MyParticle.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7B154855218745BB0004F002 /* SKWednesday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKWednesday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B154858218745BB0004F002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B15485A218745BB0004F002 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		7B15485C218745BB0004F002 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		7B15485E218745BB0004F002 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		7B154860218745BB0004F002 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		7B154863218745BB0004F002 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +41,9 @@
 		7B54DDDE2189B5D300D599C9 /* C1.Atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = C1.Atlas; sourceTree = "<group>"; };
 		7B54DDE02189C07400D599C9 /* Smokin.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Smokin.sks; sourceTree = "<group>"; };
 		7B54DDE12189C07400D599C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7B54DDEA2189E26000D599C9 /* OpenScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OpenScene.sks; sourceTree = "<group>"; };
+		7B54DDEC2189E27E00D599C9 /* OpenScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenScene.swift; sourceTree = "<group>"; };
+		7B54DDF62189E84E00D599C9 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +79,11 @@
 			children = (
 				7B54DDE02189C07400D599C9 /* Smokin.sks */,
 				7B154858218745BB0004F002 /* AppDelegate.swift */,
+				7B54DDF62189E84E00D599C9 /* MyParticle.sks */,
 				7B15485A218745BB0004F002 /* GameScene.sks */,
-				7B15485C218745BB0004F002 /* Actions.sks */,
 				7B15485E218745BB0004F002 /* GameScene.swift */,
+				7B54DDEA2189E26000D599C9 /* OpenScene.sks */,
+				7B54DDEC2189E27E00D599C9 /* OpenScene.swift */,
 				7B15487021875CF50004F002 /* GameData.swift */,
 				7B154860218745BB0004F002 /* GameViewController.swift */,
 				7B154862218745BB0004F002 /* Main.storyboard */,
@@ -154,10 +160,11 @@
 				7B15485B218745BB0004F002 /* GameScene.sks in Resources */,
 				7B154866218745BD0004F002 /* Assets.xcassets in Resources */,
 				7B54DDE32189C07400D599C9 /* Assets.xcassets in Resources */,
+				7B54DDEB2189E26000D599C9 /* OpenScene.sks in Resources */,
+				7B54DDF72189E84E00D599C9 /* MyParticle.sks in Resources */,
 				7B54DDE22189C07400D599C9 /* Smokin.sks in Resources */,
 				7B154869218745BD0004F002 /* LaunchScreen.storyboard in Resources */,
 				7B54DDDD2189B5B000D599C9 /* B1.Atlas in Resources */,
-				7B15485D218745BB0004F002 /* Actions.sks in Resources */,
 				7B54DDDF2189B5D300D599C9 /* C1.Atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B54DDED2189E27E00D599C9 /* OpenScene.swift in Sources */,
 				7B15485F218745BB0004F002 /* GameScene.swift in Sources */,
 				7B15487121875CF50004F002 /* GameData.swift in Sources */,
 				7B154861218745BB0004F002 /* GameViewController.swift in Sources */,

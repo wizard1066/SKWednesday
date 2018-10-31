@@ -33,6 +33,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         print("contact \(contact.bodyA.node?.name) \(contact.bodyB.node?.name)")
+        if contact.bodyA.node?.name == "enemy" {
+            let position = (contact.bodyB.node?.position)!
+            let smokeNode = SKEmitterNode(fileNamed: "Smokin")
+            smokeNode?.position = position
+            addChild(smokeNode!)
+            let fadeOut = SKAction.fadeOut(withDuration: 1)
+            let wait = SKAction.wait(forDuration: 2)
+            let remover = SKAction.removeFromParent()
+            let sequence = SKAction.sequence([fadeOut,wait,remover])
+            smokeNode!.run(sequence)
+        }
         contact.bodyA.node?.removeFromParent()
         contact.bodyB.node?.removeFromParent()
         if contact.bodyA.node?.name == "player" {
